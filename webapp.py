@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from io import BytesIO
 from torch.utils.data import DataLoader
+import gdown
 
 ## CNN
 import torch
@@ -95,8 +96,14 @@ def convertImageToTensor(image_bytes):
 
 if __name__ == '__main__':
     ## Load the CNN model
+    # URL or file ID
+    url = f'https://drive.google.com/uc?export=download&id=11RNqLLfHJmvjvw7t3AjWk51M5TPGtuHi'
+
+    # Download the file
+    gdown.download(url, 'model_weights.pth', quiet=False)
+
     model = CNN()
-    model.load_state_dict(torch.load("cnn_weights.pth"))
+    model.load_state_dict(torch.load("model_weights.pth"))
     model.eval()
 
     ## Webapp stuff
