@@ -56,7 +56,6 @@ def convertAudioToImage(audio_file):
     # Generate the spectrogram without displaying it
     librosa.display.specshow(S_db, x_axis='time', y_axis='mel', sr=sr)
 
-    plt.axis('off')  # Hide the axis labels
     plt.subplots_adjust(left=0, right=1, top=1, bottom=0)  # Remove extra space around the plot
 
     # Save the spectrogram to a BytesIO object
