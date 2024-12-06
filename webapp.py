@@ -97,7 +97,7 @@ def convertImageToTensor(image_bytes):
 if __name__ == '__main__':
     ## Load the CNN model
     # URL or file ID
-    url = f'https://drive.google.com/uc?export=download&id=11RNqLLfHJmvjvw7t3AjWk51M5TPGtuHi'
+    url = f'https://drive.google.com/uc?export=download&id=1TkxXAN8QTZcQwHWYfH2oqI3sWK0Aqa3t'
 
     # Download the file
     gdown.download(url, 'model_weights.pth', quiet=False)
