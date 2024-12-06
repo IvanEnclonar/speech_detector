@@ -5,5 +5,4 @@ torch
 torchvision
 torchaudio
 gdown
-BytesIO
 matplotlib.pyplot
