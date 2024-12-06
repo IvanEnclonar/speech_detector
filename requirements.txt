@@ -5,4 +5,4 @@ torch
 torchvision
 torchaudio
 gdown
-matplotlib.pyplot
+matplotlib
