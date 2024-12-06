@@ -112,20 +112,20 @@ if __name__ == '__main__':
         """
         # Spectogram Analyzer
 
-        ### DIGIMAP Final Project
+        #### DIGIMAP Final Project
 
-        We convert audio files to spectrograms and classify them using a convolutional neural network.
+        We process audio files by converting them into spectrograms, which are visual representations of sound frequencies over time. These spectrograms are then analyzed and classified using a convolutional neural network, leveraging its a filters (or kernel) to detect patterns in visual data.
         """
     )
 
     # Two file input choices
     tab1, tab2 = st.tabs(["Record", "Upload"])
     with tab1:
-        uploaded_file = st.file_uploader("Choose a file", type="wav")
+        audio_value = st.audio_input("Record a voice message (only the first 3 seconds will be used)")
     with tab2:
         # There is an issue with st.audio_input. audio_value turns high pitched and loops
-        audio_value = st.audio_input("Record a voice message (only the first 3 seconds will be used)")
-
+        uploaded_file = st.file_uploader("Choose a file", type="wav")
+        
     if uploaded_file is not None:
         # Read file:
         bytes_data = uploaded_file.getvalue()
@@ -136,7 +136,7 @@ if __name__ == '__main__':
     if audio_value:
         st.write(
         """
-        ### Results
+        ## Results
         """
         )
 
@@ -154,6 +154,6 @@ if __name__ == '__main__':
             _, predicted = torch.max(outputs, 1)
 
             if predicted.item() == 0:
-                st.write("### Prediction: Human Speech")
+                st.write("#### Prediction: Human Speech")
             else:
-                st.write("### Prediction: Non-Human Speech")
+                st.write("#### Prediction: Non-Human Speech")
