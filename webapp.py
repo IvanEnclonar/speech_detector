@@ -118,7 +118,7 @@ if __name__ == '__main__':
     )
 
     # Two file input choices
-    tab1, tab2, tab3 = st.tabs(["Record", "Upload", ["How Kernels Work"]])
+    tab1, tab2, tab3 = st.tabs(["Record", "Upload", "How Kernels Work"])
     with tab1:
         audio_value = st.audio_input("Record a voice message (only the first 3 seconds will be used)")
     with tab2:
