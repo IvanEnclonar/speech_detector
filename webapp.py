@@ -113,17 +113,34 @@ if __name__ == '__main__':
 
         #### DIGIMAP Final Project
 
-        We process audio files by converting them into spectrograms, which are visual representations of sound frequencies over time. These spectrograms are then analyzed and classified using a convolutional neural network, leveraging its a filters (or kernel) to detect patterns in visual data.
+        Our Speech Detector project leverages an innovative approach to detect speech by analyzing spectrograms instead of raw audio. Using a Convolutional Neural Network (CNN) trained from scratch on the LibriSpeech and UrbanSound8K datasets, the model processes spectrograms to determine whether a person is speaking or not. The system transforms audio input into a spectrogram, which is then fed into the CNN for classification. This allows the model to accurately distinguish between human speech and non-human sounds. The project is implemented in Python and deployed through a web application, providing an easy-to-use interface for real-time speech detection.
         """
     )
 
     # Two file input choices
-    tab1, tab2 = st.tabs(["Record", "Upload"])
+    tab1, tab2, tab3 = st.tabs(["Record", "Upload", ["How Kernels Work"]])
     with tab1:
         audio_value = st.audio_input("Record a voice message (only the first 3 seconds will be used)")
     with tab2:
         # There is an issue with st.audio_input. audio_value turns high pitched and loops
         uploaded_file = st.file_uploader("Choose a file", type="wav")
+    with tab3:
+        st.write(
+            """
+            ## How Kernels Work
+            
+            Kernels (or filters) are small matrices learned during the training process of the model. These Kernels slide over the input image, extracting specific patterns or shapes that help the model distinguish human speech within a spectrogram image. The 3 images below are the first kernel for the 3 channels of the images of our model. Combined with other kernels, they help the model learn to detect human speech.
+            """
+        )
+        st.image("Screenshot 2024-12-06 235011.png", caption="Kernel 1", width=300)
+        
+        st.write("When applied to this image of a human speech spectrogram:")
+        st.write("human.png", caption="Human Speech Spectrogram", width=300)
+        st.write("The output image is:")
+        st.image("Screenshot 2024-12-06 235128.png", caption="Kernel 1 applied to an image", width=300)
+        
+        st.write("The resulting image of other kernels applied to the spectogram can be seen below:")
+        st.image("Total.png", caption="Kernels applied to an image", width=300)
         
     if uploaded_file is not None:
         # Read file:
