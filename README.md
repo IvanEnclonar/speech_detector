@@ -6,6 +6,20 @@ The model was trained from scratch using two open-source datasets:
 - [LibriSpeech](https://www.openslr.org/12)  
 - [UrbanSound8K](https://urbansounddataset.weebly.com/urbansound8k.html)  
 
+## Spectrogram Generation
+
+We generated spectrograms for the audio data using the librosa library, a powerful Python package for audio and music analysis. Specifically, we used the Mel spectrogram, which represents the audio signal's frequency content over time, mapped onto the perceptual Mel scale. The Mel scale reflects how humans perceive sound frequencies, emphasizing lower frequencies and compressing higher ones.
+
+## Why Mel Spectrograms?
+
+Mel spectrograms provide a perceptually meaningful representation of audio signals, making them ideal for speech and sound analysis. They are computed by:
+
+Performing a Short-Time Fourier Transform (STFT) on the audio signal to extract frequency information.
+
+Applying a Mel filter bank to map the frequency bins to the Mel scale.
+
+Converting the amplitude values to a logarithmic scale for better dynamic range representation.
+
 ### **Web Application**  
 You can access the web application showcasing our speech detector here:  
 [Speech Detector Web App](https://ivanenclonar-speech-detector-webapp-prod-wmjda9.streamlit.app/?fbclid=IwZXh0bgNhZW0CMTEAAR2dhs36V3ceas7pK5A_-rnm0Qa9wTWqWPmdteuaOEk25t1AQBQvvPQmxV4_aem_bIPKpmJkI7JTMFgXUIhdhA)  
