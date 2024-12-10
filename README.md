@@ -14,11 +14,11 @@ We generated spectrograms for the audio data using the librosa library, a powerf
 
 Mel spectrograms provide a perceptually meaningful representation of audio signals, making them ideal for speech and sound analysis. They are computed by:
 
-Performing a Short-Time Fourier Transform (STFT) on the audio signal to extract frequency information.
+- Performing a Short-Time Fourier Transform (STFT) on the audio signal to extract frequency information.
 
-Applying a Mel filter bank to map the frequency bins to the Mel scale.
+- Applying a Mel filter bank to map the frequency bins to the Mel scale.
 
-Converting the amplitude values to a logarithmic scale for better dynamic range representation.
+- Converting the amplitude values to a logarithmic scale for better dynamic range representation.
 
 ### **Web Application**  
 You can access the web application showcasing our speech detector here:  
